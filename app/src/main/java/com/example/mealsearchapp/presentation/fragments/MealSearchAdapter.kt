@@ -35,6 +35,9 @@ class MealSearchAdapter: RecyclerView.Adapter<MealSearchAdapter.MyViewHolder>() 
         holder.viewHolder.apply {
             Glide.with(mealImage.context).load(list[position].image).into(mealImage)
             mealName.text = list[position].name
+            this.root.setOnClickListener {
+                listener?.invoke(list[position])
+            }
         }
     }
 

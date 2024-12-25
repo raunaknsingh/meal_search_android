@@ -20,5 +20,11 @@
         android:id="@+id/mealDetailsFragment"
         android:name="com.example.mealsearchapp.presentation.fragments.MealDetailsFragment"
         android:label="fragment_meal_details"
-        tools:layout="@layout/fragment_meal_details" />
+        tools:layout="@layout/fragment_meal_details" >
+        <argument
+            android:name="mealid"
+            app:argType="string"
+            android:defaultValue="@null"
+            app:nullable="true" />
+    </fragment>
 </navigation>

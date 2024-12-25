@@ -1,6 +1,7 @@
 package com.example.mealsearchapp.data.dto
 
 import com.example.mealsearchapp.domain.model.Meal
+import com.example.mealsearchapp.domain.model.MealDetails
 
 data class MealDTO(
     val dateModified: String?,
@@ -63,5 +64,14 @@ fun MealDTO.toDomainMeal() : Meal {
         id = this.idMeal ?: "",
         name = this.strMeal ?: "",
         image = this.strMealThumb ?: ""
+    )
+}
+
+fun MealDTO.toDomainMealDetails() : MealDetails {
+    return MealDetails(
+        id = this.idMeal ?: "",
+        name = this.strMeal ?: "",
+        image = this.strMealThumb ?: "",
+        instructions = this.strInstructions ?: ""
     )
 }

@@ -10,6 +10,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
+import androidx.navigation.fragment.findNavController
 import com.example.mealsearchapp.databinding.FragmentMealsListBinding
 import com.example.mealsearchapp.presentation.viewmodel.MealsListViewModel
 import dagger.hilt.android.AndroidEntryPoint
@@ -66,7 +67,9 @@ class MealsListFragment : Fragment() {
                                 _binding.mealListRv.adapter = mealListAdapter
                                 mealListAdapter.setContentList(it.toMutableList())
                                 mealListAdapter.setItemClickListener {
-
+                                    findNavController().navigate(
+                                        MealsListFragmentDirections.actionMealsListFragmentToMealDetailsFragment(it.id)
+                                    )
                                 }
                             } else {
                                 _binding.apply {
