@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mealsListFragment">
+
+
+    <fragment
+        android:id="@+id/mealsListFragment"
+        android:name="com.example.mealsearchapp.presentation.fragments.MealsListFragment"
+        android:label="fragment_meals_list"
+        tools:layout="@layout/fragment_meals_list" >
+        <action
+            android:id="@+id/action_mealsListFragment_to_mealDetailsFragment"
+            app:destination="@id/mealDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mealDetailsFragment"
+        android:name="com.example.mealsearchapp.presentation.fragments.MealDetailsFragment"
+        android:label="fragment_meal_details"
+        tools:layout="@layout/fragment_meal_details" />
+</navigation>
